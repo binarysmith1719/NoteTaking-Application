@@ -12,7 +12,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700"
+        android:background="@drawable/btn_backgrnd"
         android:layout_marginLeft="8dp"
         android:text="Title"
         android:textColor="@color/white"
@@ -31,7 +31,7 @@
         android:textStyle="italic"
         android:textColor="@color/white"
         android:id="@+id/text_desc"
-        android:background="@color/teal_700"
+        android:background="@drawable/btn_backgrnd"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:padding="10dp"></TextView>
@@ -45,7 +45,7 @@
         android:textSize="15dp"
         android:gravity="center_horizontal"
         android:textColor="@color/white"
-        android:background="@color/teal_700"
+        android:background="@drawable/btn_backgrnd"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:padding="10dp"></TextView>
