@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "910528044337",
+    "project_id": "taskmanager-ffedf",
+    "storage_bucket": "taskmanager-ffedf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910528044337:android:5f90e151df740dd7752410",
+        "android_client_info": {
+          "package_name": "com.codezilla.taskmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910528044337-af32bnr8tn70e2o3p4ic56vsm10109dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOKYmg3-lSZOOm9Zt2jlj0KWaTc3IrPEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910528044337-af32bnr8tn70e2o3p4ic56vsm10109dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
