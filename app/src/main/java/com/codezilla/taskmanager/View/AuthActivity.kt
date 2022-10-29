@@ -20,36 +20,15 @@ class AuthActivity : AppCompatActivity(),CommunicateAuth {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
-//        val getshpf = getSharedPreferences(MAIN_KEY, MODE_PRIVATE)
-//        val value = getshpf.getBoolean("loggeddk", false)
-//        if (value) {
-//            val intent = Intent(this@loginAct, MainActivity::class.java)
-//            finish()
-//            startActivity(intent)
-//        }
+
         supportActionBar!!.hide()
-//        signupbutton = findViewById(R.id.btn_signup)
-//        loginbutton = findViewById(R.id.btn_login)
-//        editTextEmail = findViewById(R.id.edt_eml)
-//        editTextPass = findViewById(R.id.edt_pass)
-//        mAuth = FirebaseAuth.getInstance()
-//        signupbutton.setOnClickListener(View.OnClickListener {
-//            val intent = Intent(this@loginAct, SignupAct::class.java)
-//            startActivity(intent)
-//        })
-//        loginbutton!!.setOnClickListener(View.OnClickListener {
-//            val email = editTextEmail?.getText().toString()
-//            val password = editTextPass?.getText().toString()
-//            loginfunc(email, password)
-//        })
+
         Log.d("TAG", "HERE")
 
         authViewModel=ViewModelProvider(this).get(AuthViewModel::class.java)
 
-//        authViewModel.validateSignup("subham1719@gmail.com","subham1719")
         val fragmentLogin=LoginFragment()
         this.supportFragmentManager.beginTransaction().replace(R.id.fragContainer,fragmentLogin).commit()
-
 
     }
 
@@ -58,14 +37,10 @@ class AuthActivity : AppCompatActivity(),CommunicateAuth {
         authViewModel.getValidityFlag().observe(this, Observer {
             if(it==0)
             {
-                Log.d("TAG", "sup it -> ${it}")
-
                 Toast.makeText(this,"Enter valid email and password ",Toast.LENGTH_SHORT).show()
             }
             else if(it==1)
             {
-                Log.d("TAG", "sup it -> ${it}")
-
                 var shpf=getSharedPreferences("MAIN_KEY", MODE_PRIVATE)
                 var editor=shpf.edit()
                 editor.putBoolean("Logged_In",true)
@@ -78,20 +53,18 @@ class AuthActivity : AppCompatActivity(),CommunicateAuth {
     }
 
     override fun SignUp(email: String, pass: String) {
-        Log.d("TAG", "signing in new")
-
+        var chk:Int=1
         authViewModel.validateSignup(email,pass)
         authViewModel.getValidityFlag().observe(this, Observer {
         if(it==0)
         {
-            Log.d("TAG", "sup it -> ${it}")
-
-            Toast.makeText(this,"Enter valid email ",Toast.LENGTH_SHORT).show()
+            if(chk==1) {
+                Toast.makeText(this, "Enter valid or unused email  ", Toast.LENGTH_SHORT).show()
+                chk==0;
+            }
         }
         else if(it==1)
         {
-            Log.d("TAG", "sup it -> ${it}")
-
             var shpf=getSharedPreferences("MAIN_KEY", MODE_PRIVATE)
             var editor=shpf.edit()
             editor.putBoolean("Logged_In",true)

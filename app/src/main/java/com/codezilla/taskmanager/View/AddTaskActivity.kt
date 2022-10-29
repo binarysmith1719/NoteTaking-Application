@@ -1,11 +1,14 @@
 package com.codezilla.taskmanager.View
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.codezilla.taskmanager.R
 
@@ -20,6 +23,11 @@ class AddTaskActivity : AppCompatActivity() {
          editTitle=findViewById(R.id.edit_text_title)
          editDes=findViewById(R.id.exit_text_desc)
          editTimeStamp=findViewById(R.id.edtxTimeStamp)
+
+        val actionBar: ActionBar?
+        actionBar = supportActionBar
+        val colorDrawable = ColorDrawable(Color.parseColor("#FF018786"))
+        actionBar?.setBackgroundDrawable(colorDrawable)
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         var menuInflater=getMenuInflater().inflate(R.menu.note_menu,menu)
