@@ -67,10 +67,11 @@ class MainActivity : AppCompatActivity() ,TaskAdapter.itemClickListener{
             taskViewModel.getAllData().observe(this, Observer()
             {
                 altm?.removeAll(altm!!)
-//            altm= it as ArrayList<TaskModel>?
                 it.forEach { itx ->
                     altm?.add(itx)
                 }
+//              altm?.addAll(it)
+                altm?.reverse()
                 taskAdapter.notifyDataSetChanged()
             })
         }
